@@ -3,6 +3,7 @@ package orm.delegates;
 import java.io.Serializable;
 
 @FunctionalInterface
-public interface SqlPredicate<T> extends Serializable {
+public interface Func1<T> extends Serializable {
     Boolean apply(T t);
 }
+
