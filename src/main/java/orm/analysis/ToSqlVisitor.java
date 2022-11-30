@@ -49,7 +49,7 @@ public class ToSqlVisitor implements ExpressionVisitor<StringBuilder> {
             String r = SqlOperator.InHandler(array);
             _conditionStack.add(r);
         } else {
-            _conditionStack.add("" + e.getValue().toString() + "");
+            _conditionStack.add("'" + e.getValue().toString() + "'");
         }
         return sb;
     }
@@ -109,7 +109,7 @@ public class ToSqlVisitor implements ExpressionVisitor<StringBuilder> {
             //获取参数和属性
             String parameter = _conditionStack.pop();
             String property = _conditionStack.pop();
-            String result = MessageFormat.format(format, property, parameter.replace('\'',' '));
+            String result = MessageFormat.format(format, property, parameter.replace("'",""));
             _conditionStack.add(result);
         } else if (type == 2) {
             invocationExpressionQueue.poll().getTarget().accept(this);

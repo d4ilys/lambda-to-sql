@@ -17,6 +17,6 @@ String sql = new Select<Person>()
 **结果为**
 
 ~~~sql
- (age > 5 AND name LIKE '%张' )  AND (id <> 666 AND name LIKE '%刘%' )  OR (id IN ('1','2') AND age < 15) 
+ (age > '5' AND name LIKE '%张' )  AND (id <> '666' AND name LIKE '%刘%' )  OR (id IN ('1','2') AND age < '15') 
 ~~~
 
