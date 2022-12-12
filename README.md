@@ -4,8 +4,6 @@
 
 > 简单的查询条件
 
-**因为Java的ExpressionTree是第三方实现 or 的解析存在问题，只能解析简单的表达式，如果查询条件复杂只能是下面的写法**
-
 ~~~JAVA
 String sqlSimple = new SelectSimple<Person>()
     .where(p -> p.getName().startsWith("张") && p.getAge() < 10)
@@ -18,8 +16,6 @@ String sqlSimple = new SelectSimple<Person>()
 ~~~c#
 name LIKE '%张' AND age < '10' AND id IN ('1','2') 
 ~~~
-
-
 
 > 复杂的查询条件
 
@@ -47,3 +43,4 @@ String sql = new Select<Person>()
 (name <> 'tom'AND name LIKE '%daily%') 
 ~~~
 
+***因为Java的ExpressionTree是第三方实现 or 的解析存在问题，只能解析简单的表达式，复杂查询无法解析，只能是上面的这种不优雅的写法。***
