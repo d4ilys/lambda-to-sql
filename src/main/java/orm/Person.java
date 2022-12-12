@@ -6,6 +6,9 @@ public class Person {
     public String id;
     public int age;
 
+    public String type;
+    public String sex;
+    
     public String getName() {
         return name;
     }
