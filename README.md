@@ -43,4 +43,4 @@ String sql = new Select<Person>()
 (name <> 'tom'AND name LIKE '%daily%') 
 ~~~
 
-***因为Java的ExpressionTree是第三方实现 or 的解析存在问题，只能解析简单的表达式，复杂查询无法解析，只能是上面的这种不优雅的写法。***
+***因为Java的ExpressionTree是第三方实现 or 的解析存在问题，只能解析简单的表达式，复杂查询无法解析，只能是以上这种不优雅的写法。***
